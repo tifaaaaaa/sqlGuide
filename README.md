@@ -28,6 +28,7 @@ Once you have completed this step, you then need to open "Object explorer" >> ri
 
 ![Restore database](https://user-images.githubusercontent.com/76493518/164913119-ca18018c-06eb-4842-9f6b-045c0c7ff742.png)
 
+
 Once restored successfully, it should appear under databases folder.
 
 ![database](https://user-images.githubusercontent.com/76493518/164913149-0aa0d424-cb58-4f47-8243-0bdc352b03a6.png)
@@ -45,6 +46,7 @@ Henceforward, We're going to be executing sql queries in order to further intera
 
 Press on that button then you'll be prompted to enter your first ever sql query in this course. :)
 
+# SELECT statement
 
 
 
