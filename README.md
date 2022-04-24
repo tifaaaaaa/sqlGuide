@@ -69,5 +69,15 @@ This displays **BusinessEntityID** and **JobTitle** columns but the **JobTitle**
 Displays SubTotal, TaxAmt and the **sum** of both by using the **+** operator.
 But if you notice, the third column which displays the sum Doesn't have a name. The query below will ad a temporary name to that column using an **_ALIAS_**.
 
-## SELECT SubTotal, TaxAmt, SubTotal + TaxAmt AS SubTotalWithTaxAmt FROM Purchasing.PurchaseOrderHeader;
+``` SELECT SubTotal, TaxAmt, SubTotal + TaxAmt AS SubTotalWithTaxAmt FROM Purchasing.PurchaseOrderHeader;```
+
 The third column was added with **SubTotalWithTaxAmt** temporary name by using an ALIAS (AS).
+
+```SELECT SubTotal, TaxAmt, SubTotal + TaxAmt FROM Purchasing.PurchaseOrderHeader WHERE SubTotal + TaxAmt > 500;```
+
+This query does the same as the previous one but diplays only the results where the **sum** of **SubTotal** + **TaxAmt** is **greater than** 500.
+
+```SELECT FirstName, MiddleName, LastName, FirstName + MiddleName + LastName AS FullName FROM Person.Person;```
+
+Displays **FirstName, MiddleName** and **LastName** columns and adds a temporarily named column **FullName** with all the previous results concatenated together. Notice here it concatenated because what we added were **_strings_** and not integers.
+
