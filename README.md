@@ -124,3 +124,10 @@ In the previous example we have used JobTitle **_twice_** using **OR** to show s
 ```SELECT * FROM HumanResources.Employee WHERE BusinessEntityID BETWEEN 1 AND 50;```
 
 Displays BusinessEntityID between 1 and 50 only.
+
+# LIKE
+LIKE operator is used to match a specific regular expression, for intsance, if we want to display results from **NAME** column where the name starts with letter **A** then we would execute this query;
+* ```SELECT * FROM Person.StateProvince WHERE Name LIKE 'A%';```
+
+Correspondingly, if we want to display results ending with letter **"O"** we would then execute the following query:
+* ```SELECT * FROM Person.StateProvince WHERE Name LIKE '%O';```
