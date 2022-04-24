@@ -81,7 +81,7 @@ This query does the same as the previous one but diplays only the results where 
 
 Displays **FirstName, MiddleName** and **LastName** columns and adds a temporarily named column **FullName** with all the previous results concatenated together. Notice here it concatenated because what we added were **_strings_** and not integers.
 
-One way to solve this and make our fourth column look better is by adding spaces between each result as shown here:
+One way to solve this and make our fourth column look better is by adding spaces before each column as shown here:
 
 * ```SELECT FirstName, MiddleName, LastName, FirstName + ' ' + MiddleName + ' ' + LastName AS FullName FROM Person.Person;```
 
@@ -94,3 +94,33 @@ NULL values are **unknown** or **missing** values that you can't define a partic
 Displays **FirstName, MiddleName** and **LastName** columns where the **MiddleName** column equals to NULL.
 Similarly, If we executed the following query it would display the same results but **MiddleName column** is **_NOT_** equal NULL.
 * ```SELECT FirstName, MiddleName, LastName FROM Person.Person WHERE MiddleName IS **NOT** NULL;```
+
+# Operators
+## AND
+Let's say we want to get the results where **MartialStatus** equals to **"S"** and **Gender** equals to female, in this case, **"F"** ;
+
+```SELECT * FROM HumanResources.Employee WHERE MartialStatus = 'S' AND Gender = 'F'```
+
+## OR
+For some reason we want to display all **Employees** whose job titles **are either** 'Design Engineers' **OR** 'Research and Development Manager', execute the following query and observe the results.
+
+```SELECT * FROM HumanResources.Employee WHERE JobTitle = 'Design Engineer' OR 'Research and Development Manager';```
+
+## IN
+In the previous example we have used JobTitle **_twice_** using **OR** to show specific results, while in fact, using the same column twice in a query isn't considered as best practice. Therefore, when required to test a particular column multiple times **IN** operator comes into play. 
+
+```SELECT * FROM HumanResources.Employee WHERE JobTitle IN ('Design Engineer', 'Research and Development Manager');```
+
+* **Same as** ```SELECT * FROM HumanResources.Employee WHERE JobTitle IN ('Design Engineer', 'Research and Development Manager');```
+
+
+
+```SELECT * FROM HumanResources.Employee WHERE BusinessEntityID IN (1,5,10,15);```
+
+* **Same as** ```SELECT * FROM HumanResources.Employee WHERE BusinessEntityID = '1' OR BusinessEntityID = '5' OR BusinessEntityID = '10' OR BusinessEntityID = '15';```
+
+# BETWEEN
+
+```SELECT * FROM HumanResources.Employee WHERE BusinessEntityID BETWEEN 1 AND 50;```
+
+Displays BusinessEntityID between 1 and 50 only.
