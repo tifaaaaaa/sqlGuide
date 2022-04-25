@@ -119,15 +119,34 @@ In the previous example we have used JobTitle **_twice_** using **OR** to show s
 
 * **Same as** ```SELECT * FROM HumanResources.Employee WHERE BusinessEntityID = '1' OR BusinessEntityID = '5' OR BusinessEntityID = '10' OR BusinessEntityID = '15';```
 
-# BETWEEN
+## BETWEEN
 
 ```SELECT * FROM HumanResources.Employee WHERE BusinessEntityID BETWEEN 1 AND 50;```
 
-Displays BusinessEntityID between 1 and 50 only.
+Displays results from BusinessEntityID between 1 and 50 only.
 
-# LIKE
+## LIKE
 LIKE operator is used to match a specific regular expression, for intsance, if we want to display results from **NAME** column where the name starts with letter **A** then we would execute this query;
 * ```SELECT * FROM Person.StateProvince WHERE Name LIKE 'A%';```
 
-Correspondingly, if we want to display results ending with letter **"O"** we would then execute the following query:
+Correspondingly, executing the following query would display results ending with letter **"O"**:
 * ```SELECT * FROM Person.StateProvince WHERE Name LIKE '%O';```
+
+# SORTING
+We use sorting whenever we wish to see our results ordered either by **Ascending** order or **Descending** order.
+
+```SELECT City, PostalCode FROM Person.Address ORDER BY City```
+
+This displays **City** column and **PostalCode** column but arranges City column by **ascending** order by default (since we didn't specify an order).
+
+The following query, alternatively, displays the same but in **Descending** order.
+
+* ```SELECT City, PostalCode FROM Person.Address ORDER BY City DESC```
+> Note the DESC operator at the end
+
+```SELECT FirstName, LastName, MiddleName FROM Person.Address WHERE MiddleName IS NOT NULL ORDER BY FirstName DESC, LastName ASC;```
+
+This will show results of mentioned tables but arrange them by **Descending** order for **FirstName** column and **Ascending** order for **LastName** column.
+
+# GROUP BY
+**Group by** clause is used to arrange results together **Per category**
