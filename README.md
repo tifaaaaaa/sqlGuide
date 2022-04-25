@@ -166,5 +166,20 @@ We could use the following command if we want to group the same **Sales ID** int
 
 ![Grouped by](https://user-images.githubusercontent.com/76493518/165021365-f901b63b-d1e2-4ae3-b96d-9f5649a977b2.png)
 
+> Now we can see only 1 sales order in each result with it's Unit price sum
 
+# AVG(),COUNT(),MAX(),MIN()
 
+```SELECT SalesOrderId, AVG(UnitPrice) FROM sales.salesorderdetail GROUP BY SalesOrderId```
+> Shows the **_average_** of **Unit Price** per **Sales Order**
+
+![image](https://user-images.githubusercontent.com/76493518/165022789-7ee7047c-e5bb-487a-a42f-0142266d0324.png)
+
+```SELECT SalesOrderId, COUNT(UnitPrice) FROM sales.salesorderdetail GROUP BY SalesOrderId```
+> Shows the **_total_** of **Unit Price** per **Sales Order**
+
+![image](https://user-images.githubusercontent.com/76493518/165023089-8ea9c6b6-6c99-4dff-9dfe-670d967725a5.png)
+
+```SELECT SalesOrderId, COUNT(UnitPrice) FROM sales.salesorderdetail GROUP BY SalesOrderId```
+> Shows the **_maximum_ Unit Price** per **Sales Order**
+![image](https://user-images.githubusercontent.com/76493518/165023228-c5a3c210-b572-4515-83eb-1396d6f2d082.png)
