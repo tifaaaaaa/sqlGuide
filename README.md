@@ -48,24 +48,28 @@ Press on that button then you'll be prompted to enter your first ever sql query 
 
 # SELECT statement
 
-## USE databaseName;
+```USE databaseName;```
 Command is used to switch to a **different** database. For instance, if you're on a database called "_My_Database_" and you execute the following command "USE  AdventureWorks2019", you have now switched to execute queries on **AdventureWorks2019** database.
 
-## SELECT * FROM tableName;
+```SELECT * FROM tableName;```
 The asterisk sign here refers to (ALL), so this query selects **all columns** from a specified **table**. Therefore, if you wish to extract a specific column from a table you'de mention it instead of the asterisk sign as show in the example below.
 
-## SELECT BusinessEntityID,JobTitle FROM HumanResources.Employee;
-### HumanResources is the **_schema_** name while Employee is the **_table_** we show columns from.
+```SELECT BusinessEntityID,JobTitle FROM HumanResources.Employee;```
+
+> HumanResources is the **_schema_** name while Employee is the **_table_** we show columns from.
+
 This query displays only "BusinessEntityID" and "JobTitle" columns from the **Employee** table.
 Notice that we separate column names we wish to see with a **comma** sign "**,**"
 
-## SELECT DISTINCT JobCandidateID FROM HumanResources.JobCandidate;
+## DISTINCT
+
+```SELECT DISTINCT JobCandidateID FROM HumanResources.JobCandidate;```
 Try excuting that query and notice the difference; Simply, DISTINCT **filter out unique values**. Which means you won't find any duplicates in the results.
 
-## SELECT BusinessEntityID,JobTitle FROM HumanResources.Employee WHERE JobTitle = 'Research and Development Manager';
+```SELECT BusinessEntityID,JobTitle FROM HumanResources.Employee WHERE JobTitle = 'Research and Development Manager';```
 This displays **BusinessEntityID** and **JobTitle** columns but the **JobTitle** column where it's content matches only the string 'Research and Development Manager'.
 
-## SELECT SubTotal, TaxAmt, SubTotal + TaxAmt FROM Purchasing.PurchaseOrderHeader;
+```SELECT SubTotal, TaxAmt, SubTotal + TaxAmt FROM Purchasing.PurchaseOrderHeader;```
 Displays SubTotal, TaxAmt and the **sum** of both by using the **+** operator.
 But if you notice, the third column which displays the sum Doesn't have a name. The query below will ad a temporary name to that column using an **_ALIAS_**.
 
@@ -149,4 +153,8 @@ The following query, alternatively, displays the same but in **Descending** orde
 This will show results of mentioned tables but arrange them by **Descending** order for **FirstName** column and **Ascending** order for **LastName** column.
 
 # GROUP BY
-**Group by** clause is used to arrange results together **Per category**
+**Group by** clause is used to arrange results together **Per category**.
+Let's say this command ```SELECT SalesOrderId, UnitPrice FROM sales.salerorderdetail;```
+will display the following
+
+![image](https://user-images.githubusercontent.com/76493518/165004592-c8b72179-9863-41b2-9d6a-1a68fb672dd8.png)
