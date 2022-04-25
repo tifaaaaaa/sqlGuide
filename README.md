@@ -158,3 +158,13 @@ Let's say this command ```SELECT SalesOrderId, UnitPrice FROM sales.salerorderde
 will display the following
 
 ![image](https://user-images.githubusercontent.com/76493518/165004592-c8b72179-9863-41b2-9d6a-1a68fb672dd8.png)
+
+In the **SalesOrderId** column, there're several results of **sales ID** with the same number "**43659**" but showing different **Unit price** for each one.
+We could use the following command if we want to group the same **Sales ID** into only one result and display the **_TOTAL_** of **Unit prices**.
+
+```SELECT SalesOrderId, SUM(UnitPrice) FROM sales.salesorderdetail GROUP BY SalesOrderId```
+
+![Grouped by](https://user-images.githubusercontent.com/76493518/165021365-f901b63b-d1e2-4ae3-b96d-9f5649a977b2.png)
+
+
+
