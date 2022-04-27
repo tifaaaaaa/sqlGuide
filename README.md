@@ -201,11 +201,11 @@ This query will add a third column named **FullName** and Concatenates all the t
 ## LEFT(),RIGHT()
 * If i want to extract, for example, 3 characters from the left of a string i use the **LEFT()** function.
 
-** **LEFT()** and **RIGHT()** functions take two arguments, in the first argument you specify the column name containing the string and the second how many letters you with to show from a string.
+>> **LEFT()** and **RIGHT()** functions take two arguments, in the first argument you specify the column name containing the string and the second how many letters you with to show from a string.
 
 ```Select FirstName, LEFT(FirstName, 3) AS FirstThreeLetters FROM Person.Person;```
 
-This query will display the **First three letters** of each result in **FirstName** column in a second column called **FirstThreeLetters**.  
+This query will display the **First three letters** of each result in **FirstName** column in a second column called **FirstThreeLetters**.
 
 ![image](https://user-images.githubusercontent.com/76493518/165637457-8a2c269c-e953-4446-82cf-364701b96660.png)
 
