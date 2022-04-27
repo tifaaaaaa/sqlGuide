@@ -108,14 +108,14 @@ Let's say we want to get the results where **MartialStatus** equals to **"S"** a
 ## OR
 For some reason we want to display all **Employees** whose job titles **are either** 'Design Engineers' **OR** 'Research and Development Manager', execute the following query and observe the results.
 
-```SELECT * FROM HumanResources.Employee WHERE JobTitle = 'Design Engineer' OR 'Research and Development Manager';```
+```SELECT * FROM HumanResources.Employee WHERE JobTitle = 'Design Engineer' OR JobTitle = 'Research and Development Manager';```
 
 ## IN
 In the previous example we have used JobTitle **_twice_** using **OR** to show specific results, while in fact, using the same column twice in a query isn't considered as best practice. Therefore, when required to test a particular column multiple times **IN** operator comes into play. 
 
 ```SELECT * FROM HumanResources.Employee WHERE JobTitle IN ('Design Engineer', 'Research and Development Manager');```
 
-* **Same as** ```SELECT * FROM HumanResources.Employee WHERE JobTitle IN ('Design Engineer', 'Research and Development Manager');```
+* **Same as** ```SELECT * FROM HumanResources.Employee WHERE JobTitle = 'Design Engineer' OR JobTitle = 'Research and Development Manager';```
 
 
 
@@ -180,6 +180,37 @@ We could use the following command if we want to group the same **Sales ID** int
 
 ![image](https://user-images.githubusercontent.com/76493518/165023089-8ea9c6b6-6c99-4dff-9dfe-670d967725a5.png)
 
-```SELECT SalesOrderId, COUNT(UnitPrice) FROM sales.salesorderdetail GROUP BY SalesOrderId```
+```SELECT SalesOrderId, MAX(UnitPrice) FROM sales.salesorderdetail GROUP BY SalesOrderId```
 > Shows the **_maximum_ Unit Price** per **Sales Order**
 ![image](https://user-images.githubusercontent.com/76493518/165023228-c5a3c210-b572-4515-83eb-1396d6f2d082.png)
+
+# STRINGS
+
+## CONCAT()
+```SELECT FirstName, MiddleName, LastName, CONCAT(FirstName, ' ', MiddleName, ' ', LastName) AS FullName FROM Person.Person WHERE MiddleName IS NOT NULL;```
+
+This query will add a third column named **FullName** and Concatenates all the three names together as a full name. It acts exactly here like the **+** operator.
+
+![image](https://user-images.githubusercontent.com/76493518/165636744-1f8288c9-29c5-4994-be08-630a5e3372ef.png)
+
+## LENGTH()
+* As the name suggests, This clause let's you know the **how many characters** a specific string has.
+
+![image](https://user-images.githubusercontent.com/76493518/165637304-cfc2fb57-5021-4fa9-a957-724d4ae4fc01.png)
+
+## LEFT(),RIGHT()
+* If i want to extract, for example, 3 characters from the left of a string i use the **LEFT()** function.
+
+** **LEFT()** and **RIGHT()** functions take two arguments, in the first argument you specify the column name containing the string and the second how many letters you with to show from a string.
+
+```Select FirstName, LEFT(FirstName, 3) AS FirstThreeLetters FROM Person.Person;```
+
+This query will display the **First three letters** of each result in **FirstName** column in a second column called **FirstThreeLetters**.  
+
+![image](https://user-images.githubusercontent.com/76493518/165637457-8a2c269c-e953-4446-82cf-364701b96660.png)
+
+
+
+
+
+
