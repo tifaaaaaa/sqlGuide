@@ -203,12 +203,21 @@ This query will add a third column named **FullName** and Concatenates all the t
 
 >> **LEFT()** and **RIGHT()** functions take two arguments, in the first argument you specify the column name containing the string and the second how many letters you with to show from a string.
 
+
 ```Select FirstName, LEFT(FirstName, 3) AS FirstThreeLetters FROM Person.Person;```
 
 This query will display the **First three letters** of each result in **FirstName** column in a second column called **FirstThreeLetters**.
 
 ![image](https://user-images.githubusercontent.com/76493518/165637457-8a2c269c-e953-4446-82cf-364701b96660.png)
 
+## SUBSTRING()
+* SUBSTRING() Function takes 3 arguments, the first one is the column that has our string, second is the index we wish to start counting from while the third one is the number of string we wish to display.
+
+```SELECT Firstname, SUBSTRING(FirstName, 3, 4) FROM Person.Person;```
+
+>> This query will display all **Strings** starting from the **third letter** and will show only 4 letters
+
+![image](https://user-images.githubusercontent.com/76493518/165640698-7d549999-325b-414b-8b6c-88620957f8ef.png)
 
 
 
