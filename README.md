@@ -230,4 +230,12 @@ Displays **SalesOrderId**, **OrderDate** columns and the **_DAY_** of the **Orde
 
 ![image](https://user-images.githubusercontent.com/76493518/165644092-9cffd006-5c24-40c1-bd3c-7abfac8a6103.png)
 
+## MONTH()
 
+* ```SELECT SalesOrderId,OrderDate, MONTH(OrderDate) AS extractMonth FROM Sales.SalesOrderHeader;```
+
+Displays **SalesOrderId**, **OrderDate** columns and the **_MONTH_** of the **Order** in a third column called **extractMonth**
+
+![image](https://user-images.githubusercontent.com/76493518/165644350-a1eaa2d0-31b9-428f-9337-4efd7d0d4a8f.png)
+
+# HAVING
