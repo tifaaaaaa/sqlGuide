@@ -219,7 +219,15 @@ This query will display the **First three letters** of each result in **FirstNam
 
 ![image](https://user-images.githubusercontent.com/76493518/165640698-7d549999-325b-414b-8b6c-88620957f8ef.png)
 
+>> As you might have noticed, the first result showed only 2 letters since the name **"Syed"** has only 4 letters then it started counting from the **third** letter "e" till the end. On the other hand, **"Catherine"** has more than 4 letters and it started counting from the **Third letter** "t" till "r".
 
+# DATE()
+## DAY()
 
+* ```SELECT SalesOrderId,OrderDate, DAY(OrderDate) AS extractDay FROM Sales.SalesOrderHeader;```
+
+Displays **SalesOrderId**, **OrderDate** columns and the **_DAY_** of the **Order** in a third column called **extractDay**.
+
+![image](https://user-images.githubusercontent.com/76493518/165644092-9cffd006-5c24-40c1-bd3c-7abfac8a6103.png)
 
 
