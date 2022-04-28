@@ -258,6 +258,6 @@ Please NOTE that you have to use the query clauses by the order below, thus, usi
 
 * SELECT
 *   * FROM
-*     * GROUP BY
-*      * HAVING 
-*       * ORDER BY
+*   * GROUP BY
+*   * HAVING 
+*   * ORDER BY
