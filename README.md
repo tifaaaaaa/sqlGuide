@@ -256,8 +256,8 @@ Please NOTE that you have to use the query clauses by the order below, thus, usi
 
 ![image](https://user-images.githubusercontent.com/76493518/165786669-7dc6f1c8-3e98-4eaa-a931-c24da9f2141c.png)
 
-* SELECT
-    * FROM
-    * GROUP BY
-    * HAVING 
-    * ORDER BY
+1 SELECT
+    2 FROM
+    3 GROUP BY
+    4 HAVING 
+    5 ORDER BY
