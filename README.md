@@ -238,4 +238,12 @@ Displays **SalesOrderId**, **OrderDate** columns and the **_MONTH_** of the **Or
 
 ![image](https://user-images.githubusercontent.com/76493518/165644350-a1eaa2d0-31b9-428f-9337-4efd7d0d4a8f.png)
 
-# HAVING
+# HAVING clause
+
+* ```SELECT SalesOrderId, SUM(UnitPrice) AS TotalUnitPricePerSales FROM sales.salesorderdetail GROUP BY SalesOrderid HAVING SUM(UnitPrice) > 10000;```
+
+This displays **Sum of unit price** per **Sales order** which is greater than **10000**.
+
+![image](https://user-images.githubusercontent.com/76493518/165775760-54a5ffeb-cc25-40e6-af54-974236783f99.png)
+
+>> Notice here that we didn't use **WHERE**clause with **Greater than sign (>)**, because an aggregate **(sum)** may not appear in WHERE clause. 
