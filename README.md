@@ -242,10 +242,22 @@ Displays **SalesOrderId**, **OrderDate** columns and the **_MONTH_** of the **Or
 
 * ```SELECT SalesOrderId, SUM(UnitPrice) AS TotalUnitPricePerSales FROM sales.salesorderdetail GROUP BY SalesOrderid HAVING SUM(UnitPrice) > 10000;```
 
-This displays **Sum of unit price** per **Sales order** which is greater than **10000**. And you can't use **HAVING** clause before **GROUP BY**.
+This displays **Sum of unit price** per **Sales order** which is greater than **10000**.
+Notice that you can't use **HAVING** clause before **GROUP BY**.
 
 ![image](https://user-images.githubusercontent.com/76493518/165775760-54a5ffeb-cc25-40e6-af54-974236783f99.png)
 
->> Notice here that we didn't use **WHERE**clause with **Greater than sign (>)** because an aggregate **(sum)** may not appear in WHERE clause. 
+>> Notice here that we didn't use **WHERE** clause with **Greater than sign (>)** because an aggregate **(sum)** may not appear in WHERE clause. 
 >> I can give a **WHERE** clause to a **column** but not to an aggregate function such as (**SUM, MAX, MIN**),
+
 >> *  ```SELECT SalesOrderId, SUM(UnitPrice) AS TotalUnitPricePerSales FROM sales.salesorderdetail WHERE SalesOrderId > 50000 GROUP BY SalesOrderid HAVING SUM(UnitPrice) > 10000;```
+
+Please NOTE that you have to use the query clauses by the order below, thus, using any clause in the wrong order will definitely produce and error to you.
+
+![image](https://user-images.githubusercontent.com/76493518/165786669-7dc6f1c8-3e98-4eaa-a931-c24da9f2141c.png)
+
+* SELECT
+** FROM
+*** GROUP BY
+**** HAVING
+***** ORDER BY
