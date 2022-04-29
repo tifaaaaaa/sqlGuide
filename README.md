@@ -261,3 +261,29 @@ Please NOTE that you have to use the query clauses by the order below, thus, usi
     * GROUP BY
     * HAVING 
     * ORDER BY
+
+# COMBINATION
+## UNION
+
+* If we want to combine all records from multiple tables into a **single** select statement we use UNION statement.
+
+>> UNION removes all **duplicate** records.
+>> All data types in all selected columns must be the same. 
+>> The number of columns you choose should match.
+
+```SELECT BusinessEntityID FROM HumanResources.Employee
+	UNION
+SELECT BusinessEntityID FROM Person.Person	
+	UNION
+SELECT CustomerID FROM Sales.Customer```
+
+This query will display the list of all **BusinessEntityId**, 
+
+![image](https://user-images.githubusercontent.com/76493518/165791835-ae3240a1-2981-4654-8cde-0f525092ed6c.png)
+
+>> If i choose **UNION ALL**, it will display the same results but without removing **duplicates**
+
+## JOIN
+* We use **JOINS** if we want to **combine multiple** columns;
+
+
