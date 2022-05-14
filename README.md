@@ -271,11 +271,8 @@ Please NOTE that you have to use the query clauses by the order below, thus, usi
 >> All data types in all selected columns must be the same. 
 >> The number of columns you choose should match.
 
-```SELECT BusinessEntityID FROM HumanResources.Employee
-	UNION
-SELECT BusinessEntityID FROM Person.Person	
-	UNION
-SELECT CustomerID FROM Sales.Customer```
+```SELECT BusinessEntityID FROM HumanResources.Employee UNION SELECT BusinessEntityID FROM Person.Person UNION SELECT CustomerID FROM Sales.Customer```
+
 
 This query will display the list of all **BusinessEntityId**, 
 
@@ -284,6 +281,7 @@ This query will display the list of all **BusinessEntityId**,
 >> If i choose **UNION ALL**, it will display the same results but without removing **duplicates**
 
 ## JOIN
+In the previous example we said that if we want to combine multiple **tables** we can use **union** but if we want to combile 
 * We use **JOINS** if we want to **combine multiple** columns;
 
 
