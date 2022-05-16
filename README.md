@@ -271,7 +271,12 @@ Please NOTE that you have to use the query clauses by the order below, thus, usi
 >> All data types in all selected columns must be the same. 
 >> The number of columns you choose should match.
 
-```SELECT BusinessEntityID FROM HumanResources.Employee UNION SELECT BusinessEntityID FROM Person.Person UNION SELECT CustomerID FROM Sales.Customer```
+```SELECT BusinessEntityID FROM HumanResources.Employee
+   UNION 
+SELECT BusinessEntityID FROM Person.Person 
+   UNION
+SELECT CustomerID FROM Sales.Customer
+```
 
 
 This query will display the list of all **BusinessEntityId**, 
@@ -295,7 +300,8 @@ INNER JOIN another_table
     ON mytable.id = another_table.id
 WHERE condition(s)
 ORDER BY column, … ASC/DESC
-LIMIT num_limit OFFSET num_offset; ```
+LIMIT num_limit OFFSET num_offset;
+```
 
-
+mnbvgjhkg
 
