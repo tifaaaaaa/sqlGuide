@@ -281,9 +281,21 @@ This query will display the list of all **BusinessEntityId**,
 >> If i choose **UNION ALL**, it will display the same results but without removing **duplicates**
 
 ## JOIN
+### INNER JOIN
 In the previous example we said that if we want to combine multiple **tables** we can use **union** but if we want to combile 
-* We use **JOINS** if we want to **combine multiple** columns;
+
 Up to now, we've been working with a single table, but entity data in the real world is often broken down into pieces and stored across multiple orthogonal tables using a process known as _normalization_ https://en.wikipedia.org/wiki/Database_normalization
+
+* Tables that share information about a single entity need to have a **primary key** that identifies that entity **uniquely** across the database. One common primary key type is an **auto-incrementing integer (because they are space efficient)**, but it can also be a string, hashed value, so long as it is **unique**.
+* Using the **JOIN** clause in a query, we can combine row data across two separate tables using this unique key. The first of the joins that we will introduce is the **INNER JOIN**.
+
+```SELECT column, another_table_column, …
+FROM mytable
+INNER JOIN another_table 
+    ON mytable.id = another_table.id
+WHERE condition(s)
+ORDER BY column, … ASC/DESC
+LIMIT num_limit OFFSET num_offset; ```
 
 
 
