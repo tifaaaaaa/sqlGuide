@@ -283,5 +283,7 @@ This query will display the list of all **BusinessEntityId**,
 ## JOIN
 In the previous example we said that if we want to combine multiple **tables** we can use **union** but if we want to combile 
 * We use **JOINS** if we want to **combine multiple** columns;
+Up to now, we've been working with a single table, but entity data in the real world is often broken down into pieces and stored across multiple orthogonal tables using a process known as _normalization_ https://en.wikipedia.org/wiki/Database_normalization
+
 
 
