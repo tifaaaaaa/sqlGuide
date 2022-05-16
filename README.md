@@ -271,7 +271,8 @@ Please NOTE that you have to use the query clauses by the order below, thus, usi
 >> All data types in all selected columns must be the same. 
 >> The number of columns you choose should match.
 
-```SELECT BusinessEntityID FROM HumanResources.Employee
+```
+SELECT BusinessEntityID FROM HumanResources.Employee
    UNION 
 SELECT BusinessEntityID FROM Person.Person 
    UNION
